@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="UI/UX 設計作品集 Wireframe 互動展示" />
+  <title>PORTFOLIO — 作品集 Wireframe</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主導覽">
+      <button class="brand" type="button" data-go="works" aria-label="返回首頁">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-index">03</span>
+      </button>
+      <nav class="sidebar-nav" aria-label="頁面導覽">
+        <button class="nav-link is-current" data-go="works" aria-current="page">首頁</button>
+        <button class="nav-link" data-go="works">作品集</button>
+        <button class="nav-link" data-go="about">關於我</button>
+        <button class="nav-link" data-go="resume">我的履歷</button>
+        <button class="nav-link" id="contactOpen" type="button">聯絡我</button>
+      </nav>
+      <div class="sidebar-bottom"><span>PORTFOLIO</span><span>2026</span></div>
+    </aside>
+
+    <main class="main-area" id="mainArea" tabindex="-1">
+      <div class="stage" id="stage">
+        <div class="stage-edge stage-edge-top" aria-hidden="true"><span id="previousLabel">我的履歷</span></div>
+        <div class="view-window" id="viewWindow" aria-live="polite">
+          <section class="panel panel-works is-active" id="worksPanel" aria-label="作品分類">
+            <div class="work-grid" id="workGrid" aria-label="設計作品分類">
+              <button class="work-tile" data-category="product" type="button">
+                <span class="tile-placeholder" aria-hidden="true"></span>
+                <span class="tile-title">專案設計</span>
+                <span class="tile-detail">PRODUCT / UX DESIGN</span>
+                <span class="tile-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="work-tile" data-category="ui" type="button">
+                <span class="tile-placeholder" aria-hidden="true"></span>
+                <span class="tile-title">介面設計</span>
+                <span class="tile-detail">UI / WEB DESIGN</span>
+                <span class="tile-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="work-tile" data-category="visual" type="button">
+                <span class="tile-placeholder" aria-hidden="true"></span>
+                <span class="tile-title">平面設計</span>
+                <span class="tile-detail">GRAPHIC / VISUAL DESIGN</span>
+                <span class="tile-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <div class="work-help">將滑鼠移至作品分類以展開　·　點擊查看分類作品</div>
+          </section>
+
+          <section class="panel panel-about" id="aboutPanel" aria-label="關於我" hidden>
+            <div class="plain-placeholder"><div class="plain-tag">ABOUT ME</div><div class="plain-image" aria-label="個人圖片佔位"></div><h1>關於我</h1><p>此區保留個人簡介、設計理念與專業背景內容，後續可依作品集正式文案替換。</p></div>
+          </section>
+
+          <section class="panel panel-resume" id="resumePanel" aria-label="我的履歷" hidden>
+            <div class="resume-placeholder"><div class="plain-tag">RESUME</div><h1>我的履歷</h1><p>此區為履歷內容預留位置</p><div class="resume-line short"></div><div class="resume-line"></div><div class="resume-line"></div><div class="resume-line medium"></div><div class="resume-section"></div><div class="resume-line"></div><div class="resume-line short"></div></div>
+          </section>
+
+          <section class="panel panel-category" id="categoryPanel" aria-label="作品列表" hidden>
+            <div class="category-page">
+              <button class="back-link" id="backToWorks" type="button">← 返回作品分類</button>
+              <div class="category-heading"><span id="categoryEnglish">PRODUCT / UX DESIGN</span><h1 id="categoryTitle">專案設計</h1></div>
+              <div class="project-list" id="projectList"></div>
+            </div>
+          </section>
+        </div>
+        <div class="stage-edge stage-edge-bottom" aria-hidden="true"><span id="nextLabel">關於我</span></div>
+      </div>
+      <div class="vertical-controls" aria-label="區塊切換">
+        <button id="prevButton" type="button" aria-label="切換上一個區塊" title="上一個區塊">↑</button>
+        <div class="step-indicator" id="stepIndicator">01 / 03</div>
+        <button id="nextButton" type="button" aria-label="切換下一個區塊" title="下一個區塊">↓</button>
+      </div>
+    </main>
+    <div class="bottom-band" aria-hidden="true"></div>
+  </div>
+
+  <div class="modal-overlay" id="contactModal" hidden>
+    <div class="contact-card" role="dialog" aria-modal="true" aria-labelledby="contactHeading" tabindex="-1">
+      <button type="button" class="close-modal" id="contactClose" aria-label="關閉聯絡名片">×</button>
+      <div class="contact-card-top"><div class="card-square" aria-hidden="true"></div><span>CONTACT CARD</span></div>
+      <h2 id="contactHeading">聯絡我</h2>
+      <p>UI/UX &amp; VISUAL DESIGN</p>
+      <div class="contact-divider"></div>
+      <div class="contact-row"><span>Email</span><span class="contact-empty">電子郵件待填入</span></div>
+      <div class="contact-row"><span>LinkedIn</span><span class="contact-empty">連結待填入</span></div>
+      <div class="contact-row"><span>Portfolio</span><span>2026</span></div>
+      <small>聯絡資訊為佔位內容，請於程式碼中替換。</small>
+    </div>
+  </div>
+</body>
+</html>
